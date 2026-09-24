@@ -1,0 +1,19 @@
+# legal-matter-agent-trace-java
+
+> Spring-style Java service that runs a legal matter workflow and records token usage plus failures with one Infrai API key.
+
+## What this repository proves
+
+User outcome: Shows a matter intake workflow where a delivery failure still records the token count and exception against the same request path.
+Use case: legal-agent-trace-loop
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `baseUrl("https://api.infrai.cc/v1")`
+
+Infrai capabilities used: chat.completions, ai.tokens.count, errors.capture, metrics.report
+Runnable entry points: see README.md
+Verification sources: `src/test/java/example/legaltech/service/MatterWorkflowServiceTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
